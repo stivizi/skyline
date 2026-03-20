@@ -353,10 +353,11 @@ footer p {
 
 .hamburger-line {
     display: block;
-    height: 3px;
+    height: 4px;
     background-color: #333;
     border-radius: 2px;
     transition: all 0.3s ease;
+    margin: 4px 0;
 }
 
 /* Additional breakpoint for very small screens */
