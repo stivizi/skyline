@@ -405,12 +405,14 @@ footer p {
     
     .usp-grid,
     .services-grid,
+    .services-variant .services-grid,
     .contact-info {
         grid-template-columns: 1fr;
     }
     
     /* Reset service card grid on mobile */
-    .services-grid .service-card {
+    .services-grid .service-card,
+    .services-variant .services-grid .service-card {
         grid-column: 1 / -1;
     }
     
