@@ -412,7 +412,11 @@ footer p {
     
     /* Reset service card grid on mobile */
     .services-grid .service-card,
-    .services-variant .services-grid .service-card {
+    .services-variant .services-grid .service-card:nth-child(1),
+    .services-variant .services-grid .service-card:nth-child(2),
+    .services-variant .services-grid .service-card:nth-child(3),
+    .services-variant .services-grid .service-card:nth-child(4),
+    .services-variant .services-grid .service-card:nth-child(5) {
         grid-column: 1 / -1;
     }
     
