@@ -15,8 +15,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="public/41E98F17-DD1F-41BA-8026-255BA56135B9.jpeg" alt="Skyline Freight Connect Inc. Logo">
+                <img src="public/41E98F17-DD1F-41BA-8026-255BA56135B9.jpeg" alt="Skyline Freight Connect Inc. Logo" loading="lazy">
             </div>
+            <button class="hamburger-menu" aria-label="Toggle navigation">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -149,6 +154,45 @@
             </div>
         </div>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navUl = document.querySelector('nav ul');
+            
+            hamburgerMenu.addEventListener('click', function() {
+                hamburgerMenu.classList.toggle('active');
+                navUl.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerMenu.classList.remove('active');
+                    navUl.classList.remove('active');
+                });
+            });
+            
+            // Lazy load hero background image
+            const heroSection = document.querySelector('.hero');
+            if (heroSection) {
+                const heroObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            heroSection.style.backgroundImage = entry.target.style.backgroundImage ||
+                                "url('public/hero.jpg')";
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                // Initially set to empty to defer loading
+                heroSection.style.backgroundImage = 'none';
+                heroObserver.observe(heroSection);
+            }
+        });
+    </script>
 </body>
 
 </html>
