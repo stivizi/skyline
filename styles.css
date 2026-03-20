@@ -447,6 +447,15 @@ footer p {
         padding: 0.5rem 0;
     }
     
+    /* Make services variant responsive */
+    .services-variant .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-variant .services-grid .service-card {
+        grid-column: 1 / -1;
+    }
+    
     /* Hamburger menu animation */
     .hamburger-menu.active .hamburger-line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);

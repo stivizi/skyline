@@ -173,24 +173,6 @@
                     navUl.classList.remove('active');
                 });
             });
-            
-            // Lazy load hero background image
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                const heroObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            heroSection.style.backgroundImage = entry.target.style.backgroundImage ||
-                                "url('public/hero.jpg')";
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                });
-                
-                // Initially set to empty to defer loading
-                heroSection.style.backgroundImage = 'none';
-                heroObserver.observe(heroSection);
-            }
         });
     </script>
 </body>
