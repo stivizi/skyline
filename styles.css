@@ -346,8 +346,9 @@ footer p {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 0.5rem;
     z-index: 1001;
+    margin-left: auto;
 }
 
 .hamburger-line {
